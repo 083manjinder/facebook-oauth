@@ -13,8 +13,10 @@ function Login() {
   const dispatch = useDispatch();
 
   const REDIRECT_URL = process.env.REACT_APP_REDIRECT_URL;
+  console.log("🚀 ~ Login ~ REDIRECT_URL:", REDIRECT_URL)
 
   const handleUser = async (respone) => {
+    console.log("🚀 ~ handleUser ~ respone:", respone)
     if (respone?.data) {
       let responeData = respone.data;
       let user = {};
@@ -47,7 +49,7 @@ function Login() {
       loginCheck();
     }
   }, [token]);
-
+  console.log("process.env.REACT_APP_FACEBOOKAPPID",process.env.REACT_APP_FACEBOOKAPPID)
   return (
     <>
       <div className="container d-flex flex-column align-items-center mt-5">
